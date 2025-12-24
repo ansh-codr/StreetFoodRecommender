@@ -1,5 +1,11 @@
 :root {
   color-scheme: light;
+  --bgA: #fff6ef;
+  --bgB: #f6f7ff;
+  --bgC: #f2fff9;
+  --coverA: rgba(255, 122, 24, 0.18);
+  --coverB: rgba(49, 145, 151, 0.14);
+  --coverC: rgba(175, 0, 45, 0.10);
 }
 
 * {
@@ -10,14 +16,63 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.4;
-  background: #f6f7f9;
+  background:
+    radial-gradient(900px 540px at 10% 0%, var(--bgA), transparent 60%),
+    radial-gradient(900px 540px at 90% 10%, var(--bgC), transparent 60%),
+    radial-gradient(900px 540px at 55% 100%, var(--bgB), transparent 60%),
+    #f6f7f9;
   color: #111;
+}
+
+/* Subtle “street-food” pattern overlay using an inline SVG (no external image assets) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.10;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.35' stroke-width='1'%3E%3Cpath d='M24 54c16-22 36-22 52 0'/%3E%3Cpath d='M24 70c16-22 36-22 52 0'/%3E%3Cpath d='M144 64c12-16 28-16 40 0'/%3E%3Ccircle cx='60' cy='142' r='18'/%3E%3Cpath d='M44 142h32'/%3E%3Cpath d='M60 126v32'/%3E%3Cpath d='M148 140c0 14 10 26 24 26s24-12 24-26'/%3E%3Cpath d='M148 140c0-10 10-18 24-18s24 8 24 18'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 .container {
   max-width: 880px;
   margin: 0 auto;
   padding: 24px 16px 48px;
+}
+
+/* Hero cover header for prettier screenshots */
+.header.cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 22px 18px;
+  border: 1px solid #e6e8ee;
+  background:
+    radial-gradient(900px 240px at 10% 0%, var(--coverA), transparent 60%),
+    radial-gradient(700px 260px at 90% 10%, var(--coverB), transparent 60%),
+    radial-gradient(700px 260px at 40% 120%, var(--coverC), transparent 60%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+}
+
+.header.cover::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 122, 24, 0),
+    rgba(255, 122, 24, 0.14),
+    rgba(49, 145, 151, 0)
+  );
+  filter: blur(12px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.coverInner {
+  position: relative;
+  z-index: 1;
 }
 
 .header h1 {
