@@ -1,0 +1,158 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  background: #f6f7f9;
+  color: #111;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #444;
+}
+
+.card {
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid #e6e8ee;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field span,
+legend {
+  font-weight: 600;
+}
+
+select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d7dbe6;
+  background: #fff;
+}
+
+.tagGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #e6e8ee;
+  border-radius: 10px;
+}
+
+.btn {
+  grid-column: 1 / -1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.status {
+  margin: 12px 0 0;
+  color: #444;
+}
+
+.resultsHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.results {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.result {
+  border: 1px solid #e6e8ee;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.result h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.result .meta {
+  margin-top: 6px;
+  color: #444;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #d7dbe6;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #333;
+  background: #fafbff;
+}
+
+ul.why {
+  margin: 10px 0 0;
+}
+
+.muted {
+  color: #666;
+}
+
+.footer {
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .tagGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

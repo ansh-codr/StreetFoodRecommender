@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Local Guide — Street Food Recommender</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Street Food Recommender</h1>
+        <p class="subtitle">Powered by <strong>product.md</strong> (custom local context)</p>
+      </header>
+
+      <section class="card">
+        <h2>Your preferences</h2>
+
+        <form id="prefsForm" class="form">
+          <label class="field">
+            <span>Diet</span>
+            <select id="diet">
+              <option value="any" selected>Any</option>
+              <option value="veg">Veg only</option>
+              <option value="nonveg">Non-veg</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Budget</span>
+            <select id="budget">
+              <option value="any" selected>Any</option>
+              <option value="low">Low (street)</option>
+              <option value="mid">Mid</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Spice</span>
+            <select id="spice">
+              <option value="any" selected>Any</option>
+              <option value="mild">Mild</option>
+              <option value="medium">Medium</option>
+              <option value="hot">Hot</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Time</span>
+            <select id="time">
+              <option value="any" selected>Any</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+              <option value="late-night">Late night</option>
+              <option value="breakfast">Breakfast</option>
+            </select>
+          </label>
+
+          <fieldset class="field">
+            <legend>Tags (optional)</legend>
+            <div class="tagGrid">
+              <label class="tag"><input type="checkbox" value="chaat" /> chaat</label>
+              <label class="tag"><input type="checkbox" value="fried" /> fried</label>
+              <label class="tag"><input type="checkbox" value="sweet" /> sweet</label>
+              <label class="tag"><input type="checkbox" value="savory" /> savory</label>
+              <label class="tag"><input type="checkbox" value="refreshing" /> refreshing</label>
+              <label class="tag"><input type="checkbox" value="late-night" /> late-night</label>
+              <label class="tag"><input type="checkbox" value="breakfast" /> breakfast</label>
+              <label class="tag"><input type="checkbox" value="quick" /> quick</label>
+              <label class="tag"><input type="checkbox" value="sit-down" /> sit-down</label>
+            </div>
+          </fieldset>
+
+          <button class="btn" type="submit">Recommend</button>
+        </form>
+
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <div class="resultsHeader">
+          <h2>Recommendations</h2>
+          <small id="cityMeta" class="muted"></small>
+        </div>
+        <ol id="results" class="results"></ol>
+      </section>
+
+      <footer class="footer">
+        <p class="muted">Edit <strong>product.md</strong> to teach the app your city.</p>
+      </footer>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
